@@ -23,3 +23,33 @@ document.forms.form.addEventListener('submit', function (event) {
     console.log(fieldEmail);
 })
 
+
+/*
+2) Модернизировать код рисовалки из приложенного к лекции кода лекции 12 таким оюразом,
+чтобы линия шла не прирывно от клика к клику, как в paint.
+*/
+
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+ctx.fillStyle = '#F0C18B';
+ctx.fillRect(0, 0, 500, 400);
+
+let startX, startY, endX, endY;
+
+canvas.addEventListener('mousedown', (event) => {
+
+    startX = event.offsetX;
+    startY = event.offsetY;
+
+    canvas.onmouseup = (event) => {
+        endX = event.offsetX;
+        endY = event.offsetY;
+
+        ctx.beginPath();
+        ctx.moveTo(startX, startY);
+        ctx.lineTo(endX, endY);
+        ctx.stroke();
+    };
+});
+
