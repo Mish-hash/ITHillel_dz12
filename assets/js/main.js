@@ -64,3 +64,16 @@ document.getElementById('color-line').addEventListener('change', event => {
     document.getElementById('line').style.backgroundColor = event.target.value;
 });
 
+
+/*
+4) напишите регулярку, которая проверяет что текст соответствует адресу страницы,
+текст задайте как переменную адрес может быть www.-----.---, http://..... или https:// .......
+*/
+
+const url = 'www.google';
+
+const reg = /^((http|https|):\/\/)?(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+)/i;
+
+const result = reg.test(url) ? 'This is URL' : 'thi is not URL';
+
+console.log(result);
