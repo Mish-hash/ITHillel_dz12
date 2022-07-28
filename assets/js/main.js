@@ -29,7 +29,7 @@ document.forms.form.addEventListener('submit', function (event) {
 чтобы линия шла не прирывно от клика к клику, как в paint.
 */
 
-const canvas = document.getElementById('canvas');
+/* const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 ctx.fillStyle = '#F0C18B';
@@ -51,5 +51,16 @@ canvas.addEventListener('mousedown', (event) => {
         ctx.lineTo(endX, endY);
         ctx.stroke();
     };
+}); */
+
+
+/*
+3) добавить возможность изменения цвета линии из палитры,
+палитра 3и кликабельных div квадартика, цвета выберете по вкусу.
+*/
+
+document.getElementById('color-line').addEventListener('change', event => {
+    //console.log(event.target.value);
+    document.getElementById('line').style.backgroundColor = event.target.value;
 });
 

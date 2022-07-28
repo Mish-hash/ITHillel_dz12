@@ -25,3 +25,13 @@ form {
     flex-direction: column;
 }
 
+hr {
+    width: 100%;
+}
+
+.line {
+    height: 10px;
+    width: 600px;
+    background-color: black;
+    margin-top: 20px;
+}
